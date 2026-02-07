@@ -17,34 +17,23 @@ def changeValues(actValue, rotation, rotValue):
     #print(f"Valor atual: {actValue}")
     return actValue
 
-#versao para 2 estrelas
+#versao para 2 estrelas, errada porque está a contar numeros 
+#a mais neste caso 20
 
 def changeValues2(actValue, rotation, rotValue):
     global answer
-    isZero = False
-
-    if actValue == 0:
-        isZero = True
 
     if rotation == 'L':
         for i in range(rotValue):
             if actValue == 0:
                 actValue = 100
-
-                if not isZero:
-                    answer += 1
-                isZero = False
-
+                answer += 1
             actValue -= 1
     elif rotation == 'R':
         for i in range(rotValue):
             if actValue == 99:
                 actValue = -1
-
-                if not isZero:
-                    answer += 1
-                isZero = False
-                
+                answer += 1
             actValue += 1
 
 def changeValues3(actValue, rotation, rotValue):
@@ -75,6 +64,8 @@ def changeValues3(actValue, rotation, rotValue):
     return actValue 
 
 #solução para 2 estrelas sem dar 20 a mais -.-
+#portanto mesma logica ue o primeiro que fiz, mas deixa chegar 
+#às estremidades e só altera aí
 def changeValues4(actValue, rotation, rotValue):
     global answer
 
